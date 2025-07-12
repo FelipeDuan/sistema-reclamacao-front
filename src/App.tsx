@@ -14,6 +14,7 @@ import { Text } from "./components/ui/text";
 import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
+import { Card } from "./components/ui/card";
 
 export default function App() {
   return (
@@ -98,6 +99,10 @@ export default function App() {
         <div className="flex gap-2">
           <Input placeholder="Digite seu email" />
           <Input type="password" placeholder="Digite sua senha" size={"sm"} />
+        </div>
+
+        <div className="flex gap-2">
+          <Card>Alguma Coisa, testando Card</Card>
         </div>
       </div>
     </>
