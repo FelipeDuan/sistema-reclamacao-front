@@ -15,6 +15,7 @@ import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Card } from "./components/ui/card";
+import { Label } from "./components/ui/label";
 
 export default function App() {
   return (
@@ -103,6 +104,10 @@ export default function App() {
 
         <div className="flex gap-2">
           <Card>Alguma Coisa, testando Card</Card>
+        </div>
+
+        <div className="flex gap-2">
+          <Label required>Número de CPF</Label>
         </div>
       </div>
     </>
