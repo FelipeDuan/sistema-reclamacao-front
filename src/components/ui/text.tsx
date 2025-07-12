@@ -4,15 +4,15 @@ import React from "react";
 export const textVariants = cva("font-sans", {
   variants: {
     variant: {
-      heading: "text-2xl font-bold",
-      subheading: "text-xl font-semibold",
+      heading: "text-2xl font-semibold",
+      subheading: "text-xl font-medium",
       body: "text-base font-normal",
-      bodyBold: "text-base font-semibold",
+      bodyBold: "text-base font-medium",
       small: "text-sm font-normal",
     },
     color: {
       default: "text-gray-900",
-      muted: "text-gray-500",
+      muted: "text-gray-400",
       primary: "text-blue-600",
       danger: "text-red-600",
       success: "text-green-600",

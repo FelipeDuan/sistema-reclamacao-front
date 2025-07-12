@@ -6,7 +6,7 @@ import { getButtonContentColor } from "../../helpers/utils";
 import { Loader } from "lucide-react";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md cursor-pointer font-medium transition-colors gap-1",
+  "inline-flex items-center justify-center rounded-md cursor-pointer font-medium transition-colors gap-1 shadow",
   {
     variants: {
       variant: {

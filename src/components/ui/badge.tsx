@@ -4,7 +4,7 @@ import { Icon } from "./icon";
 import { getColorFromVariant } from "../../helpers/utils";
 
 export const badgeVariants = cva(
-  `inline-flex items-center justify-center rounded-md gap-1`,
+  `inline-flex items-center justify-center rounded-md gap-1 shadow-sm`,
   {
     variants: {
       variant: {
