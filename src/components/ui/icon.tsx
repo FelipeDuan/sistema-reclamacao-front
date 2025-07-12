@@ -8,10 +8,11 @@ export const iconVariants = cva("", {
       lg: "w-8 h-8",
     },
     color: {
-      default: "text-gray-600",
+      default: "text-gray-900",
+      muted: "text-gray-500",
       primary: "text-blue-600",
       danger: "text-red-600",
-      sucess: "text-green-600",
+      success: "text-green-600",
     },
     animate: {
       true: "animate-spin",

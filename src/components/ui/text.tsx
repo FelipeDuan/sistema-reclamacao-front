@@ -15,7 +15,7 @@ export const textVariants = cva("font-sans", {
       muted: "text-gray-500",
       primary: "text-blue-600",
       danger: "text-red-600",
-      sucess: "text-green-600",
+      success: "text-green-600",
     },
     align: {
       left: "text-left",
