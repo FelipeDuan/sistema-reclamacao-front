@@ -1,7 +1,19 @@
-import { Check, Eye, Megaphone, Trash, X } from "lucide-react";
+import {
+  Check,
+  CheckIcon,
+  Eye,
+  Loader,
+  Megaphone,
+  PencilIcon,
+  Plus,
+  Trash,
+  TrashIcon,
+  X,
+} from "lucide-react";
 import { Icon } from "./components/ui/icon";
 import { Text } from "./components/ui/text";
 import { Badge } from "./components/ui/badge";
+import { Button } from "./components/ui/button";
 
 export default function App() {
   return (
@@ -24,6 +36,7 @@ export default function App() {
         </div>
 
         <div className="flex gap-2">
+          <Icon svg={Loader} animate />
           <Icon svg={Megaphone} color={"primary"} />
           <Icon svg={Check} color={"success"} />
           <Icon svg={Trash} color={"danger"} size={"sm"} />
@@ -46,6 +59,40 @@ export default function App() {
           <Badge icon={Check} variant={"success"}>
             Sucess
           </Badge>
+        </div>
+
+        <div className="flex gap-2">
+          <Button>Salvar</Button>
+
+          <Button variant="primary" icon={CheckIcon}>
+            Confirmar
+          </Button>
+
+          <Button variant="success">Aprovar</Button>
+
+          <Button variant="success" icon={CheckIcon}>
+            Concluído
+          </Button>
+
+          <Button variant="danger">Excluir</Button>
+
+          <Button variant="danger" icon={TrashIcon}>
+            Deletar
+          </Button>
+
+          <Button variant="secondary">Cancelar</Button>
+
+          <Button variant="secondary" icon={PencilIcon}>
+            Editar
+          </Button>
+
+          <Button variant="primary" loading>
+            Salvando
+          </Button>
+
+          <Button variant="primary" disabled>
+            Desabilitado
+          </Button>
         </div>
       </div>
     </>
