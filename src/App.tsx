@@ -1,3 +1,5 @@
+import { Check, Megaphone, Trash } from "lucide-react";
+import { Icon } from "./components/ui/icon";
 import { Text } from "./components/ui/text";
 
 export default function App() {
@@ -18,6 +20,12 @@ export default function App() {
           <Text variant="small" color="muted">
             Texto pequeno
           </Text>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Icon svg={Megaphone} color={"primary"} />
+          <Icon svg={Check} color={"sucess"} />
+          <Icon svg={Trash} color={"danger"} />
         </div>
       </div>
     </>
