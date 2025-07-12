@@ -5,7 +5,6 @@ import {
   Loader,
   Megaphone,
   PencilIcon,
-  Plus,
   Trash,
   TrashIcon,
   X,
@@ -14,6 +13,7 @@ import { Icon } from "./components/ui/icon";
 import { Text } from "./components/ui/text";
 import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
 
 export default function App() {
   return (
@@ -93,6 +93,11 @@ export default function App() {
           <Button variant="primary" disabled>
             Desabilitado
           </Button>
+        </div>
+
+        <div className="flex gap-2">
+          <Input placeholder="Digite seu email" />
+          <Input type="password" placeholder="Digite sua senha" size={"sm"} />
         </div>
       </div>
     </>
