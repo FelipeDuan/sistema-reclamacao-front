@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router";
 import { formatCpf } from "../helpers/utils";
+import { BASE_URL, publicFetch } from "../helpers/api";
 
 export function useRegisterForm() {
   const [userName, setUserName] = useState("");
@@ -39,9 +40,30 @@ export function useRegisterForm() {
         cpf: cpfLimpo,
         senha: userPassword,
       };
+      console.log(formData);
 
       // ToDo: depois tenho que lembrar de colocar o fetch pro back aqui
-      console.log(formData);
+      const data = await publicFetch({
+        url: `${BASE_URL}/auth/registrar`,
+        options: {
+          method: "POST",
+          body: JSON.stringify(formData),
+        },
+      });
+
+      if (data && data.status === "true") {
+        alert(
+          data.message ||
+            "Cadastro realizado com sucesso! Faça login para acessar."
+        );
+        navigate("/login", { replace: true });
+        return;
+      }
+
+      alert(
+        data.message ||
+          "Não foi possível realizar cadastro. Tente credenciais válidas!"
+      );
     } catch (error: any) {
       alert(error.message || "Erro ao fazer o login.");
     } finally {
