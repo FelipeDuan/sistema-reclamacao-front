@@ -1,3 +1,4 @@
+// obs: como essa é uma aplicação para o teste técnico, deixei a url da api aqui e o token para que possam rodar localmente sem problemas também.
 export const BASE_URL = "http://localhost:8080";
 export const TOKEN_KEY = "reclame.token";
 
