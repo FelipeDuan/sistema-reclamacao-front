@@ -35,7 +35,6 @@ export function useLoginForm() {
         senha: password,
       };
 
-      // ToDo: aqui eu tenho que fazer o fetch pro meu backend e guardar o token
       const data = await publicFetch({
         url: `${BASE_URL}/auth/login`,
         options: {
