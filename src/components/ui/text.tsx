@@ -9,6 +9,7 @@ export const textVariants = cva("font-sans", {
       body: "text-base font-normal",
       bodyBold: "text-base font-medium",
       small: "text-sm font-normal",
+      smaller: "text-[0.75rem] font-normal",
     },
     color: {
       default: "text-gray-900",

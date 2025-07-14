@@ -42,7 +42,7 @@ export function useRegisterForm() {
       };
       console.log(formData);
 
-      // ToDo: depois tenho que lembrar de colocar o fetch pro back aqui
+      // ToDo: depois tenho investigar o pq de ele sempre voltar pra registrar
       const data = await publicFetch({
         url: `${BASE_URL}/auth/registrar`,
         options: {
@@ -60,6 +60,7 @@ export function useRegisterForm() {
         return;
       }
 
+      // ToDo: esse alerta não está aparecendo, depois investigar o porquê
       alert(
         data.message ||
           "Não foi possível realizar cadastro. Tente credenciais válidas!"
