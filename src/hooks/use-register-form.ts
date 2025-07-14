@@ -50,7 +50,7 @@ export function useRegisterForm() {
         },
       });
 
-      if (data && data.status === "true") {
+      if (data && data.status === true) {
         alert(
           data.message ||
             "Cadastro realizado com sucesso! Faça login para acessar."
@@ -59,11 +59,7 @@ export function useRegisterForm() {
         return;
       }
 
-      // ToDo: esse alerta não está aparecendo, depois investigar o porquê
-      alert(
-        data.message ||
-          "Não foi possível realizar cadastro. Tente credenciais válidas!"
-      );
+      alert("Não foi possível realizar cadastro. Tente credenciais válidas!");
     } catch (error: any) {
       alert(handleApiError(error, "Erro ao fazer o cadastro."));
     } finally {

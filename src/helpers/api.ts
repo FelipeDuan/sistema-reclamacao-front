@@ -1,6 +1,6 @@
 // obs: como essa é uma aplicação para o teste técnico, deixei a url da api aqui e o token para que possam rodar localmente sem problemas também.
 // mas numa aplicação real, eu colocaria isto num .env
-export const BASE_URL = "http://localhost:8080";
+export const BASE_URL = "https://sistema-reclamacoes-production.up.railway.app";
 export const TOKEN_KEY = "reclame.token";
 
 interface FetchProps {
@@ -18,10 +18,19 @@ export async function publicFetch({ url, options }: FetchProps) {
   });
 
   if (!res.ok) {
-    throw (
-      new Error(await res.text()) ||
-      "Erro ao fazer requisição nessa rota pública."
-    );
+    const text = await res.text();
+    let json;
+
+    try {
+      json = JSON.parse(text);
+    } catch {
+      throw (
+        new Error(await res.text()) ||
+        "Erro ao fazer requisição nessa rota pública."
+      );
+    }
+
+    throw json;
   }
 
   return res.json();
