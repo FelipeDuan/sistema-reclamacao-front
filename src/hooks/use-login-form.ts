@@ -50,7 +50,7 @@ export function useLoginForm() {
 
       if (data && data.token) {
         localStorage.setItem(TOKEN_KEY, data.token);
-        navigate("/", { replace: true });
+        navigate("/home", { replace: true });
         return;
       }
 

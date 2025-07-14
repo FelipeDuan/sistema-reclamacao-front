@@ -15,7 +15,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
 
       if (!isValid) {
         alert("Seu token está inválido! Por favor, faça login novamente.");
-        navigate("/login", { replace: true });
+        navigate("/", { replace: true });
       }
 
       // ToDo: seria uma boa eu implementar um toast depois, lembrar disso aqui mais tarde.

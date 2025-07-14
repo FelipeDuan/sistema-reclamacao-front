@@ -12,7 +12,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<PageLogin />} />
+        <Route path="/" element={<PageLogin />} />
         <Route path="/registrar" element={<PageRegister />} />
 
         <Route

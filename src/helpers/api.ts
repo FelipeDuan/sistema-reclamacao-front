@@ -50,7 +50,7 @@ export async function authFetch({ url, options }: FetchProps) {
 
   if (res.status === 401 || res.status === 403) {
     localStorage.removeItem(TOKEN_KEY);
-    window.location.href = "/login";
+    window.location.href = "/";
     throw new Error("Sessão expirada. Faça login novamente.");
   }
 

@@ -55,7 +55,7 @@ export function useRegisterForm() {
           data.message ||
             "Cadastro realizado com sucesso! Faça login para acessar."
         );
-        navigate("/login", { replace: true });
+        navigate("/", { replace: true });
         return;
       }
 

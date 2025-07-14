@@ -40,7 +40,7 @@ export function useCreateReclamacao() {
         setDescricao("");
         setIsLoading(false);
         alert("Reclamação criada com sucesso!");
-        navigate("/", { replace: true });
+        navigate("/home", { replace: true });
         return;
       }
 

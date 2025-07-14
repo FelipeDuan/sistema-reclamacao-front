@@ -25,13 +25,13 @@ export function Header() {
   }, []);
 
   function handleRedirectToHome() {
-    navigate("/", { replace: true });
+    navigate("/home", { replace: true });
   }
 
   function handleLogout() {
     alert("Você está efetuando o Logout!");
     localStorage.removeItem(TOKEN_KEY);
-    navigate("/login", { replace: true });
+    navigate("/", { replace: true });
   }
 
   return (

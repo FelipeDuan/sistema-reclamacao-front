@@ -35,7 +35,7 @@ export function useReclamacaoDetails() {
       });
 
       alert("Reclamação deletada com sucesso!");
-      navigate("/", { replace: true });
+      navigate("/home", { replace: true });
     } catch (error: any) {
       alert(handleApiError(error, "Erro ao excluir reclamação."));
     }
