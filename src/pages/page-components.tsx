@@ -18,6 +18,7 @@ import { Card } from "../components/ui/card";
 import { Label } from "../components/ui/label";
 import { Header } from "../components/layout/header";
 
+// obs: essa página eu utilizei apenas para testar os componentes durante a estruturação do design system
 export function PageComponents() {
   return (
     <div>
