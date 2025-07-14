@@ -1,11 +1,15 @@
 import { LoginForm } from "../components/core/login-form";
 import { Card } from "../components/ui/card";
 import { Text } from "../components/ui/text";
+import BgWhite from "../assets/BgWhite.svg";
 
 export function PageLogin() {
   return (
     <>
-      <div className="flex min-h-screen items-center justify-center p-8 bg-[url(src/assets/BgWhite.svg)]">
+      <div
+        style={{ backgroundImage: `url(${BgWhite})` }}
+        className="flex min-h-screen items-center justify-center p-8"
+      >
         <Card className="flex flex-col gap-10 p-8">
           <Text variant={"heading"} align={"center"}>
             Fazer Login
