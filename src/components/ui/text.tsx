@@ -31,10 +31,10 @@ export const textVariants = cva("font-sans", {
   },
 });
 
-interface TextProps extends VariantProps<typeof textVariants> {
+interface TextProps
+  extends VariantProps<typeof textVariants>,
+    Omit<React.HTMLAttributes<HTMLElement>, "color"> {
   as?: keyof React.JSX.IntrinsicElements;
-  className?: String;
-  children?: React.ReactNode;
 }
 
 export function Text({
