@@ -40,7 +40,6 @@ export function useRegisterForm() {
         cpf: cpfLimpo,
         senha: userPassword,
       };
-      console.log(formData);
 
       // ToDo: depois tenho investigar o pq de ele sempre voltar pra registrar
       const data = await publicFetch({

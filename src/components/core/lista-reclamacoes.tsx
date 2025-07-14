@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type Reclamacao } from "../../models/reclamacao";
-import { authFetch, BASE_URL } from "../../helpers/api";
+import { authFetch, BASE_URL, handleApiError } from "../../helpers/api";
 import { CardReclamacoes } from "./card-reclamacoes";
 
 interface ListaReclamacoesProps {
@@ -19,7 +19,7 @@ export function ListaReclamacoes({ searchReclamacao }: ListaReclamacoesProps) {
         const data = await authFetch({ url: `${BASE_URL}/api/reclamacoes` });
         setReclamacoes(data);
       } catch (error) {
-        console.log("Deu erro nessa parada aqui", error);
+        alert(handleApiError(error, "Erro ao listar reclamações"));
       }
     }
 
