@@ -2,7 +2,7 @@ import { cva, cx, type VariantProps } from "class-variance-authority";
 import { textVariants } from "./text";
 
 export const textareaVariants = cva(
-  `w-full border border-gray-300 rounded-md outline-none placeholder-gray-400
+  `w-full bg-white border border-gray-300 rounded-md outline-none placeholder-gray-400
    focus:border-blue-300 focus:ring-4 focus:ring-blue-100 transition-all shadow-sm`,
   {
     variants: {
