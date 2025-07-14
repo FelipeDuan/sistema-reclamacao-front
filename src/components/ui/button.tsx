@@ -16,7 +16,7 @@ export const buttonVariants = cva(
         danger: "bg-red-600 hover:bg-red-700",
       },
       size: {
-        sm: "px-3 py-1 text-sm",
+        sm: "px-3 py-2 text-sm",
         md: "px-4 py-2 text-base",
       },
       disabled: {

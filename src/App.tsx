@@ -4,6 +4,7 @@ import { PageLogin } from "./pages/page-login";
 import { PageComponents } from "./pages/page-components";
 import { ProtectedRoute } from "./components/core/protected-route";
 import { PageRegister } from "./pages/page-register";
+import { PageHome } from "./pages/page-home";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
           index
           element={
             <ProtectedRoute>
-              <PageComponents />
+              <PageHome />
             </ProtectedRoute>
           }
         />
