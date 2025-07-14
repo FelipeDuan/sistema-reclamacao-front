@@ -1,6 +1,11 @@
 import { useState, type ChangeEvent } from "react";
 import { formatCpf } from "../helpers/utils";
-import { BASE_URL, publicFetch, TOKEN_KEY } from "../helpers/api";
+import {
+  BASE_URL,
+  handleApiError,
+  publicFetch,
+  TOKEN_KEY,
+} from "../helpers/api";
 import { useNavigate } from "react-router";
 
 export function useLoginForm() {
@@ -51,7 +56,7 @@ export function useLoginForm() {
 
       alert("Token não recebido. Verifique suas credenciais!");
     } catch (error: any) {
-      alert(error.message || "Erro ao fazer o login.");
+      alert(handleApiError(error, "Erro ao fazer o login."));
     } finally {
       setIsLoading(false);
     }

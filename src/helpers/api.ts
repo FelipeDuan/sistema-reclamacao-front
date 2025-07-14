@@ -44,7 +44,20 @@ export async function authFetch({ url, options }: FetchProps) {
   }
 
   if (!res.ok) {
-    throw new Error((await res.text()) || "Erro na requisição autenticada.");
+    const text = await res.text();
+    let json;
+
+    try {
+      json = JSON.parse(text);
+    } catch {
+      throw new Error(text || "Erro ao fazer requisição.");
+    }
+
+    throw json;
+  }
+
+  if (!res.headers.get("content-type")?.includes("application/json")) {
+    return null;
   }
 
   return res.json();
@@ -67,4 +80,19 @@ export async function verifyToken() {
     localStorage.removeItem(TOKEN_KEY);
     return false;
   }
+}
+
+export function handleApiError(
+  error: any,
+  defaultMessage = "Erro inesperado."
+) {
+  if (error && typeof error === "object" && error.fields) {
+    return Object.values(error.fields).join("\n");
+  }
+
+  if (error && typeof error === "object" && error.message) {
+    return error.message;
+  }
+
+  return defaultMessage;
 }

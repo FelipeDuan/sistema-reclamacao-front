@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router";
 import { formatCpf } from "../helpers/utils";
-import { BASE_URL, publicFetch } from "../helpers/api";
+import { BASE_URL, handleApiError, publicFetch } from "../helpers/api";
 
 export function useRegisterForm() {
   const [userName, setUserName] = useState("");
@@ -66,7 +66,7 @@ export function useRegisterForm() {
           "Não foi possível realizar cadastro. Tente credenciais válidas!"
       );
     } catch (error: any) {
-      alert(error.message || "Erro ao fazer o login.");
+      alert(handleApiError(error, "Erro ao fazer o cadastro."));
     } finally {
       setIsLoading(false);
     }

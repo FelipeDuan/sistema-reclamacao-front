@@ -2,8 +2,10 @@ import { ArrowRight, CheckCircle, Clock } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Card } from "../ui/card";
 import { Text } from "../ui/text";
+import { useNavigate } from "react-router";
 
 interface CardReclamacaoProps {
+  id: string;
   titulo: string;
   descricao: string;
   dataCriacao: string;
@@ -11,6 +13,7 @@ interface CardReclamacaoProps {
 }
 
 export function CardReclamacoes({
+  id,
   titulo,
   descricao,
   dataCriacao,
@@ -18,6 +21,7 @@ export function CardReclamacoes({
 }: CardReclamacaoProps) {
   // ToDo: esse componente tá muito feio, mas depois eu refatoro
 
+  const navigate = useNavigate();
   const date = new Date(dataCriacao);
   const formattedDate =
     date.toLocaleDateString("pt-BR", {
@@ -30,6 +34,10 @@ export function CardReclamacoes({
       hour: "2-digit",
       minute: "2-digit",
     });
+
+  function handleRedirectToReclamacaoDetails() {
+    navigate(`/reclamacao/${id}`);
+  }
 
   return (
     <Card className="flex flex-col gap-2">
@@ -61,6 +69,7 @@ export function CardReclamacoes({
             variant={"smaller"}
             color={"primary"}
             className="flex items-center justify-center gap-1 cursor-pointer font-bold hover:text-blue-700 transition"
+            onClick={handleRedirectToReclamacaoDetails}
           >
             Ver detalhes
             <ArrowRight className="w-3 h-3 " />

@@ -6,6 +6,7 @@ import { PageRegister } from "./pages/page-register";
 import { PageHome } from "./pages/page-home";
 import { PageCreateReclamacao } from "./pages/page-create-reclamacao";
 import { PageReclamacaoDetails } from "./pages/page-reclamacao-details";
+import { PageEditReclamacao } from "./pages/page-edit-reclamacao";
 
 export default function App() {
   return (
@@ -24,10 +25,19 @@ export default function App() {
         />
 
         <Route
-          path="/reclamacao"
+          path="/reclamacao/:id"
           element={
             <ProtectedRoute>
               <PageReclamacaoDetails />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/reclamacao/:id/editar"
+          element={
+            <ProtectedRoute>
+              <PageEditReclamacao />
             </ProtectedRoute>
           }
         />

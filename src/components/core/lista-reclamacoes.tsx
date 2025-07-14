@@ -3,8 +3,15 @@ import { type Reclamacao } from "../../models/reclamacao";
 import { authFetch, BASE_URL } from "../../helpers/api";
 import { CardReclamacoes } from "./card-reclamacoes";
 
-export function ListaReclamacoes() {
+interface ListaReclamacoesProps {
+  searchReclamacao: string;
+}
+
+export function ListaReclamacoes({ searchReclamacao }: ListaReclamacoesProps) {
   const [reclamacoes, setReclamacoes] = useState<Reclamacao[]>([]);
+  const filteredReclamacoes = reclamacoes.filter((rec) =>
+    rec.titulo.toLowerCase().includes(searchReclamacao.toLowerCase())
+  );
 
   useEffect(() => {
     async function fetchReclamacoes() {
@@ -22,9 +29,10 @@ export function ListaReclamacoes() {
   return (
     <>
       <div className="flex flex-col gap-4">
-        {reclamacoes.map((rec) => (
+        {filteredReclamacoes.map((rec) => (
           <CardReclamacoes
             key={rec.id}
+            id={rec.id}
             titulo={rec.titulo}
             descricao={rec.descricao}
             status={rec.status}

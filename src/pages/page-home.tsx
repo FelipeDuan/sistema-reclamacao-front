@@ -5,9 +5,15 @@ import { Text } from "../components/ui/text";
 import { Input } from "../components/ui/input";
 import { ListaReclamacoes } from "../components/core/lista-reclamacoes";
 import { useNavigate } from "react-router";
+import { useState, type ChangeEvent } from "react";
 
 export function PageHome() {
+  const [searchReclamacao, setSearchReclamacao] = useState("");
   const navigate = useNavigate();
+
+  function handleSearchReclamacao(e: ChangeEvent<HTMLInputElement>) {
+    setSearchReclamacao(e.target.value);
+  }
 
   function handleRedirectToReclamacaoForm() {
     navigate("/reclamacao/criar");
@@ -22,7 +28,11 @@ export function PageHome() {
           <Text variant={"subheading"}>Minhas Reclamações</Text>
 
           <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4">
-            <Input placeholder="Pesquisar em minhas reclamações..." />
+            <Input
+              value={searchReclamacao}
+              onChange={handleSearchReclamacao}
+              placeholder="Pesquisar em minhas reclamações..."
+            />
             <Button
               icon={Plus}
               size="sm"
@@ -32,7 +42,7 @@ export function PageHome() {
             </Button>
           </div>
 
-          <ListaReclamacoes />
+          <ListaReclamacoes searchReclamacao={searchReclamacao} />
         </div>
       </div>
     </>

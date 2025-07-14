@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router";
-import { authFetch, BASE_URL } from "../helpers/api";
+import { authFetch, BASE_URL, handleApiError } from "../helpers/api";
 
 export function useCreateReclamacao() {
   const [titulo, setTitulo] = useState("");
@@ -46,7 +46,7 @@ export function useCreateReclamacao() {
 
       alert("Não foi possível criar reclamação");
     } catch (error: any) {
-      alert(error.message || "Erro ao criar nova reclamação.");
+      alert(handleApiError(error, "Erro ao criar nova reclamação."));
     } finally {
       setIsLoading(false);
     }
