@@ -12,11 +12,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PageLogin />} />
+        <Route index element={<PageLogin />} />
         <Route path="/registrar" element={<PageRegister />} />
 
         <Route
-          index
+          path="/home"
           element={
             <ProtectedRoute>
               <PageHome />
