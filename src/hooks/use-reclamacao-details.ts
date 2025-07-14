@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Reclamacao } from "../models/reclamacao";
 import { useNavigate, useParams } from "react-router";
 import { authFetch, BASE_URL, handleApiError } from "../helpers/api";
+import { formatDate } from "../helpers/utils";
 
 export function useReclamacaoDetails() {
   const { id } = useParams();
@@ -55,18 +56,7 @@ export function useReclamacaoDetails() {
     }
   }
 
-  const date = new Date(`${reclamacao?.dataCriacao}`);
-  const formattedDate =
-    date.toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }) +
-    " " +
-    date.toLocaleTimeString("pt-BR", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+  const formattedDate = formatDate(`${reclamacao?.dataCriacao}`);
 
   return {
     id,

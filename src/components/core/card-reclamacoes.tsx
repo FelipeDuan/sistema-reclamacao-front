@@ -3,6 +3,7 @@ import { Badge } from "../ui/badge";
 import { Card } from "../ui/card";
 import { Text } from "../ui/text";
 import { useNavigate } from "react-router";
+import { formatDate } from "../../helpers/utils";
 
 interface CardReclamacaoProps {
   id: string;
@@ -22,18 +23,7 @@ export function CardReclamacoes({
   // ToDo: esse componente tá muito feio, mas depois eu refatoro
 
   const navigate = useNavigate();
-  const date = new Date(dataCriacao);
-  const formattedDate =
-    date.toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }) +
-    " " +
-    date.toLocaleTimeString("pt-BR", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+  const formattedDate = formatDate(dataCriacao);
 
   function handleRedirectToReclamacaoDetails() {
     navigate(`/reclamacao/${id}`);

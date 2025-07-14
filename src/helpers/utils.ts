@@ -34,3 +34,20 @@ export function formatCpf(value: string) {
     .replace(/(\d{3})(\d)/, "$1.$2")
     .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 }
+
+export function formatDate(value: string) {
+  const date = new Date(value);
+  const formattedDate =
+    date.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }) +
+    " " +
+    date.toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+  return formattedDate;
+}
