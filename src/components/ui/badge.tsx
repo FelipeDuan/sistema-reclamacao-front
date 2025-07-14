@@ -45,7 +45,7 @@ export function Badge({
 
   return (
     <div className={cx(badgeVariants({ variant, size }), className)} {...props}>
-      {icon && <Icon svg={icon} color={iconColor} size={"sm"} />}
+      {icon && <Icon svg={icon} color={iconColor} size={"smaller"} />}
       <Text variant="body" color={textColor}>
         {children}
       </Text>

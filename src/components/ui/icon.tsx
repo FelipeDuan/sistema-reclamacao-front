@@ -3,6 +3,7 @@ import { cva, cx, type VariantProps } from "class-variance-authority";
 export const iconVariants = cva("", {
   variants: {
     size: {
+      smaller: "w-4 h-4",
       sm: "w-5 h-5",
       md: "w-6 h-6",
       lg: "w-8 h-8",

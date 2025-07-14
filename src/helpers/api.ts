@@ -46,6 +46,8 @@ export async function authFetch({ url, options }: FetchProps) {
   if (!res.ok) {
     throw new Error((await res.text()) || "Erro na requisição autenticada.");
   }
+
+  return res.json();
 }
 
 export async function verifyToken() {
