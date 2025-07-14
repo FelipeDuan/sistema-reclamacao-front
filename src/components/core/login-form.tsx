@@ -3,6 +3,7 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Text } from "../ui/text";
+import { useNavigate } from "react-router";
 
 export function LoginForm() {
   const {
@@ -13,6 +14,11 @@ export function LoginForm() {
     handlePassword,
     handleSubmit,
   } = useLoginForm();
+  const navigate = useNavigate();
+
+  function handleRedirectToRegisterForm() {
+    navigate("/registrar");
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -53,6 +59,20 @@ export function LoginForm() {
       <Button className="mt-2" loading={isLoading}>
         Entrar no Sistema
       </Button>
+
+      <div className="flex items-center justify-center gap-2 flex-wrap">
+        <Text className={"capitalize"} variant={"small"} color={"muted"}>
+          Ainda não possui uma conta?
+        </Text>
+        <Text
+          variant={"small"}
+          color={"primary"}
+          className={"hover:underline cursor-pointer"}
+          onClick={handleRedirectToRegisterForm}
+        >
+          Criar conta
+        </Text>
+      </div>
     </form>
   );
 }

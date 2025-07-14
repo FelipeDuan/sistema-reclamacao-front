@@ -16,10 +16,12 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Card } from "../components/ui/card";
 import { Label } from "../components/ui/label";
+import { Header } from "../components/layout/header";
 
 export function PageComponents() {
   return (
     <div>
+      <Header />
       <h1>Testando componentes</h1>
 
       <div className="flex flex-col gap-2">

@@ -9,6 +9,7 @@ export const textVariants = cva("font-sans", {
       body: "text-base font-normal",
       bodyBold: "text-base font-medium",
       small: "text-sm font-normal",
+      smaller: "text-[0.75rem] font-normal",
     },
     color: {
       default: "text-gray-900",
@@ -30,10 +31,10 @@ export const textVariants = cva("font-sans", {
   },
 });
 
-interface TextProps extends VariantProps<typeof textVariants> {
+interface TextProps
+  extends VariantProps<typeof textVariants>,
+    Omit<React.HTMLAttributes<HTMLElement>, "color"> {
   as?: keyof React.JSX.IntrinsicElements;
-  className?: String;
-  children?: React.ReactNode;
 }
 
 export function Text({
