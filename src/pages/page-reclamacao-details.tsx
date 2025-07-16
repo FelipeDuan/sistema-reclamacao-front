@@ -29,9 +29,9 @@ export function PageReclamacaoDetails() {
 
         <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col gap-4">
           <Card className="p-6 flex flex-col gap-8">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start sm:flex-row sm:items-center justify-between gap-2 sm:gap-8">
               <Text variant={"subheading"}>{reclamacao?.titulo}</Text>
-              <div className="flex items-center justify-center gap-8">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 <Text color={"muted"}>{formattedDate}</Text>
                 {reclamacao?.status === "PENDENTE" ? (
                   <Badge icon={Clock} size={"sm"}>
@@ -49,7 +49,7 @@ export function PageReclamacaoDetails() {
             <Text>{reclamacao?.descricao}</Text>
 
             {reclamacao?.status === "PENDENTE" && (
-              <div className="flex justify-end items-center gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-end items-stretch gap-2 sm:gap-4">
                 <Button
                   onClick={handleConcludReclamacao}
                   icon={Check}
